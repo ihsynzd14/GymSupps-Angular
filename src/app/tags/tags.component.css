@@ -1,0 +1,32 @@
+div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div#tagname{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+
+div#tagname a{
+    color: rgb(0, 0, 0);
+    background-color: #c0c0c0;
+    opacity:0.85;
+}
+
+div#tagname a:hover{
+    transition: 0.2s;
+    opacity:1;
+}
+
+div a{
+    background-color: #f0f0f0;
+    padding: .3rem 1rem;
+    margin: .2rem .15rem;
+    border-radius: 10rem;
+    font-weight: 300;
+    color: rgb(6, 6, 6);
+}

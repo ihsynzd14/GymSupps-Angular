@@ -1,0 +1,44 @@
+<app-not-found [visible]="!supp" notFoundMessage="Product Not Found!" resetLinkText="Back to Homepage"></app-not-found>
+<div *ngIf="supp" class="container">
+    <img [src]="supp.imageUrl" [alt]="supp.name"/>
+    
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{supp.name}}
+            </span>
+            <span class="favorite {{supp.favorite?'':'not'}}">
+                🌟
+            </span>
+        </div>
+        <div class="rating">
+            <star-rating
+                [value]="supp.stars"
+                [totalstars]="5" 
+                heckedcolor="red"
+                uncheckedcolor="black"
+                size="30px"
+                [readonly]="true">
+            </star-rating>
+        </div>
+        <div class="origins">
+            <span *ngFor="let origin of supp.origins">
+                {{origin}}
+            </span>
+        </div>
+        <div class="tags">
+            <app-tags [suppPageTags]="supp.tags"></app-tags>
+        </div>
+        <div class="dailyuse">
+            <span>
+                Daily use reccomandation for {{supp.name}} <strong>{{supp.dailyuse}}</strong>
+            </span>
+        </div>
+        <div class="price">
+            <span>{{supp.price|currency}}</span>
+        </div>
+
+        <button (click)="addToCart()">Add to Cart</button>
+    </div>
+
+</div>
